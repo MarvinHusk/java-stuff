@@ -1,3 +1,5 @@
+import java.util.Random;
+
 import javax.swing.DefaultListModel;
 
 public class ClsLista {
@@ -32,6 +34,7 @@ public class ClsLista {
 			}
 			modeloinicio.addElement(aux.getDato());
 		}
+
 	}
 
 	public void fininicio() {
@@ -102,6 +105,5 @@ public class ClsLista {
 		}
 		return aux.getDato();
 	}
-	
-	
+
 }
