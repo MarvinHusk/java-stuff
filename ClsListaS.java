@@ -1,20 +1,20 @@
 import javax.swing.DefaultListModel;
 
-public class ClsLista {
-	ClsNodo inicio, fin;
+public class ClsListaS {
+	ClsNodoS inicio, fin;
 
-	public ClsLista() {
+	public ClsListaS() {
 		inicio = null;
 		fin = null;
 	}
 
-	public void inserta(int dato) {
+	public void insertaS(String dato) {
 		if (inicio == null && fin == null) { // vacia
 			// inicio = fin = new ClsNodo(dato);
-			inicio = new ClsNodo(dato);
+			inicio = new ClsNodoS(dato);
 			fin = inicio;
 		} else {
-			fin.setSiguiente(new ClsNodo(fin, dato, null));
+			fin.setSiguiente(new ClsNodoS(fin, dato, null));
 			fin = fin.getSiguiente();
 		}
 	}
@@ -24,7 +24,7 @@ public class ClsLista {
 
 	public void iniciofin() {
 		modeloinicio.clear();
-		ClsNodo aux = inicio;
+		ClsNodoS aux = inicio;
 		if (inicio != null) { // no este vacia
 			while (aux.getSiguiente() != null) { // mientras haya elementos despues
 				modeloinicio.addElement(aux.getDato()); // se agrega el dato
@@ -36,7 +36,7 @@ public class ClsLista {
 
 	public void fininicio() {
 		modelofin.clear();
-		ClsNodo aux = fin;
+		ClsNodoS aux = fin;
 		if (fin != null) { // no este vacia
 
 			while (aux.getAnterior() != null) { // mientras haya elementos antes
@@ -47,10 +47,14 @@ public class ClsLista {
 		}
 	}
 
-	public int dato;
+	public void limpiar() {
+		modelofin.clear();
+	}
 
-	public int borrar(int indice) {
-		ClsNodo aux = inicio;
+	public String dato;
+
+	public String borrar(int indice) {
+		ClsNodoS aux = inicio;
 		for (int i = 0; i < indice; i++) {
 			aux = aux.getSiguiente();
 		}
@@ -95,13 +99,11 @@ public class ClsLista {
 		return dato;
 	}
 
-	public int getdato(int indice) {
-		ClsNodo aux = inicio;
+	public String getdato(int indice) {
+		ClsNodoS aux = inicio;
 		for (int i = 0; i < indice; i++) {
 			aux = aux.getSiguiente();
 		}
 		return aux.getDato();
 	}
-	
-	
 }

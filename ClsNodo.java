@@ -1,35 +1,43 @@
 
 public class ClsNodo {
-	
-	private int dato;
-	private ClsNodo sig;
-	
+	private ClsNodo anterior;
+	private Integer dato;
+	private ClsNodo siguiente;
+
 	public ClsNodo(int valor) {
-		dato = valor;
-		sig = null;
+		this.dato = valor;
+		this.anterior = null;
+		this.siguiente = null;
 	}
 
-	public ClsNodo(int valor, ClsNodo valor2) {
-		dato = valor;
-		sig = valor2;
+	public ClsNodo(ClsNodo ant, int valor, ClsNodo sig) {
+		this.dato = valor;
+		this.anterior = ant;
+		this.siguiente = sig;
 	}
-	
+
 	public int getDato() {
 		return dato;
 	}
 
-	public ClsNodo getSig() {
-		return sig;
-	}
-
 	public void setDato(int valor) {
-		dato = valor;
+		this.dato = valor;
 	}
 
-	public void setSig(ClsNodo valor) {
-		sig = valor;
+	public ClsNodo getAnterior() {
+		return anterior;
 	}
-	
-	
+
+	public void setAnterior(ClsNodo ant) {
+		this.anterior = ant;
+	}
+
+	public ClsNodo getSiguiente() {
+		return siguiente;
+	}
+
+	public void setSiguiente(ClsNodo sig) {
+		this.siguiente = sig;
+	}
 
 }
